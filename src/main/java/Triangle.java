@@ -1,3 +1,8 @@
+/** Автор - Константин Барзаковский
+* Telegram - @qa_w_a_y
+* https://qaway.ru/
+* */
+
 public class Triangle {
 
     public static final String EQUILATERAL = "equilateral triangle";
