@@ -4,6 +4,8 @@
    <test name="Triangle tests">
        <classes>
            <class name="TriangleTest"/>
+           <!--В следствии добавления нового класса, будут запущены все тесты, в данном случае 6-->
+           <class name="AnotherOneTriangleTest"/>
        </classes>
    </test>
 </suite>
