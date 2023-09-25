@@ -67,6 +67,10 @@
 
 ![5img.png](src%2Fmain%2Fresources%2F5img.png)
 
+Их необходимо запускать напрямую из файла `testng.xml`
+
+![img.png](src/main/resources/6img.png)
+
 Рассмотрим небольшой пример в соответствии файла `testng.xml`
 ```java
 @Parametrs({"Name", "Age"})

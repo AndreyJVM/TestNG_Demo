@@ -10,8 +10,8 @@
     </test>
 
     <test name="Parameters test">
-        <parameter name="name" value="Andrey"/>
-        <parameter name="age" value="21"/>
+        <parameter name="Name" value="Andrey"/>
+        <parameter name="Age" value="21"/>
         <classes>
             <class name="ParametersTest"/>
         </classes>
