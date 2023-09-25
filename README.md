@@ -67,7 +67,9 @@
 
 ![5img.png](src%2Fmain%2Fresources%2F5img.png)
 
-Их необходимо запускать напрямую из файла `testng.xml`
+Их необходимо запускать напрямую из файла `testng.xml`. Область видимости напрямую зависит, от 
+расположения тега `<parameter>`. В нашем примере, данный тег прописан на уровне тега 
+`<test>`
 
 ![img.png](src/main/resources/6img.png)
 
@@ -80,3 +82,6 @@ public void testTwoParemetrs(String name, int age){
 }
 ```
 Подробнее и с примерами можно посмотреть по этому пути: `src/test/java/ParametersTest.java`
+
+
+
