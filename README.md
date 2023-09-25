@@ -83,7 +83,7 @@ public void testTwoParemetrs(String name, int age){
 ```
 
 Расширим область видимости на два тестовых класса, для этого создадим ещё один класс
-`AuxiliaryParametersTest` и переместим тег содержащий значение `Name` в область тега 
+`AuxiliaryParametersTest`, а в `testng.xml` переместим тег содержащий значение `Name` в область тега 
 `<suite>`
 <details>
     <summary>testng.xml</summary>
