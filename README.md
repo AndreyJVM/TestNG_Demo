@@ -121,6 +121,3 @@ public void testTwoParemetrs(String name, int age){
 </details>
 
 Подробнее и с примерами можно посмотреть по этому пути: `src/test/java/ParametersTest.java`
-
-
-
