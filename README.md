@@ -81,6 +81,45 @@ public void testTwoParemetrs(String name, int age){
     // Бизнес логика теста
 }
 ```
+
+Расширим область видимости на два тестовых класса, для этого создадим ещё один класс
+`AuxiliaryParametersTest` и переместим тег содержащий значение `Name` в область тега 
+`<suite>`
+<details>
+    <summary>testng.xml</summary>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="First test suite">
+
+    <parameter name="Name" value="Andrey"/>
+
+    <test name="Triangle tests">
+        <classes>
+            <class name="TriangleTest"/>
+            <!--В следствии добавления нового класса, будут запущены все тесты, в данном случае 6-->
+            <class name="AnotherOneTriangleTest"/>
+        </classes>
+    </test>
+
+    <test name="Parameters test">
+        <parameter name="Age" value="21"/>
+        <classes>
+            <class name="ParametersTest"/>
+        </classes>
+    </test>
+
+    <test name="Auxiliary parameters test">
+        <parameter name="Temperature" value="18"/>
+        <classes>
+            <class name="AuxiliaryParametersTest"/>
+        </classes>
+    </test>
+</suite>
+```
+</details>
+
 Подробнее и с примерами можно посмотреть по этому пути: `src/test/java/ParametersTest.java`
 
 

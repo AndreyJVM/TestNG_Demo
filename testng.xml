@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="First test suite">
+
+    <parameter name="Name" value="Andrey"/>
+
     <test name="Triangle tests">
         <classes>
             <class name="TriangleTest"/>
@@ -10,10 +13,16 @@
     </test>
 
     <test name="Parameters test">
-        <parameter name="Name" value="Andrey"/>
         <parameter name="Age" value="21"/>
         <classes>
             <class name="ParametersTest"/>
+        </classes>
+    </test>
+
+    <test name="Auxiliary parameters test">
+        <parameter name="Temperature" value="18"/>
+        <classes>
+            <class name="AuxiliaryParametersTest"/>
         </classes>
     </test>
 </suite>
