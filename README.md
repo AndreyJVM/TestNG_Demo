@@ -172,3 +172,21 @@ TestNG запустит 3 теста с разными данными.
 | `@AfterClass`    | будет запущен после текущего тестового класса                                                                                                               |
 | `@AfterMethod`   | запустится после каждого теста в данном классе                                                                 |
 
+Разбирать все аннотации, не считаю целесообразным, принцип думаю понятен.
+Для примера создадим ещё два тестовых класса `FirstBeforeAfterTest` и `SecondBeforeAfterTest`.
+В них реализуем простую логику, вывод информативного сообщения.
+
+```java
+public class FirstBeforeAfterTest {
+
+    @Test
+    public void firstExampleMethodTest(){
+        System.out.println("Class name - " + getClass().getSimpleName() + " --- Method firstExampleMethodTest ");
+    }
+
+    @Test
+    public void secondExampleMethodTest(){
+        System.out.println("Class name - " + getClass().getSimpleName() + " --- Method secondExampleMethodTest ");
+    }
+}
+```
