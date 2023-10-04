@@ -6,7 +6,7 @@ public class AuxiliaryParametersTest {
     @Parameters("Temperature")
     @Test
     public void testNewYorkWeatherForecastForToday(int temperature) {
-        System.out.println("New York Weather Forecast for Today - " + temperature);
+        System.out.println("New York Weather Forecast for Today - " + temperature + "\n");
     }
 
     @Parameters({"Name", "Temperature"})

@@ -83,7 +83,7 @@ public void testTwoParemetrs(String name, int age){
 ```
 
 Расширим область видимости на два тестовых класса, для этого создадим ещё один класс
-`AuxiliaryParametersTest`, а в `testng.xml` переместим тег содержащий значение `Name` в область тега 
+`AuxiliaryParametersTest`, а в `testng.xml` переместим тег содержащий значение `Name` в корень тега 
 `<suite>`
 <details>
     <summary>testng.xml</summary>
@@ -120,4 +120,36 @@ public void testTwoParemetrs(String name, int age){
 ```
 </details>
 
+В данном случае нас не интересует логика тестов, первый метод будет показывать температуру на сегодня, а второй 
+сделает это персонально для нас, используя имя. В конечном итоге получаем следующие:
+
+![7img.png](src%2Fmain%2Fresources%2F7img.png)
+
 Подробнее и с примерами можно посмотреть по этому пути: `src/test/java/ParametersTest.java`
+
+---
+## Провайдер данных, @DataProvider
+
+При проведении тестирования, не редко, требуется запускать один и тотже 
+тест с различными данными. Тут на помощь приходит `@DataProvider` который 
+будет содержать все нужные комбинации данных. Для этого всего лишь, достаточно 
+в `@Test` передать атрибут `dataProvider = "____"`.
+```java
+@Test(dataProvider = "dataProvider")
+public void test(String one, int two){
+    //
+}
+
+@DataProvider(name = "dataProvider")
+// Если опустить атрибут name будут использовано имя метода 
+public Object[][] dataProvider() {
+        return new Object[][]{
+            {"one", 1},
+            {"two", 2},
+            {"three", 3},
+        };
+}
+```
+TestNG запустит 3 теста с разными данными.
+
+Подробнее и с примерами можно посмотреть по этому пути: src/test/java/DataProviderTest.java
