@@ -1,6 +1,12 @@
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+/**
+ * Тест демонстрирует работу с testng.xml, а именно с тегом parameter.
+ *
+ * Содержит два метода с разным количеством входных параметров
+ * */
+
 public class ParametersTest {
     @Parameters("Name")
     @Test

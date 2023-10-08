@@ -1,4 +1,9 @@
 import org.testng.annotations.Test;
+/**
+ * Второй тест демонстрирующий работы аннотаций @BeforeXXX и @AfterXXX
+ *
+ * Методы не имеют сложной логики и нужны для информативности вывода
+ * */
 
 public class SecondBeforeAfterTest {
 

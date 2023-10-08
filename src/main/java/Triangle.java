@@ -1,7 +1,8 @@
-/** Автор - Константин Барзаковский
-* Telegram - @qa_w_a_y
-* https://qaway.ru/
-* */
+/**
+ * Автор - Константин Барзаковский
+ * Telegram - @qa_w_a_y
+ * https://qaway.ru/
+ */
 
 public class Triangle {
 
@@ -27,7 +28,7 @@ public class Triangle {
             }
         }
 
-        Integer[] sides = new Integer[] {
+        Integer[] sides = new Integer[]{
                 Integer.valueOf(inputAsArray[0]),
                 Integer.valueOf(inputAsArray[1]),
                 Integer.valueOf(inputAsArray[2])
@@ -41,7 +42,8 @@ public class Triangle {
 
         if (!isTriangle(sides)) {
             return "not triangle";
-        } if (sides[0].equals(sides[1]) && sides[1].equals(sides[2]) && sides[2].equals(sides[0])) {
+        }
+        if (sides[0].equals(sides[1]) && sides[1].equals(sides[2]) && sides[2].equals(sides[0])) {
             return "equilateral triangle";
         } else if (sides[0].equals(sides[1]) || sides[1].equals(sides[2]) || sides[2].equals(sides[0])) {
             return "isosceles triangle";
@@ -53,8 +55,8 @@ public class Triangle {
     }
 
     private static boolean isTriangle(Integer[] sides) {
-        return (((long)sides[0] + sides[1]) > sides[2]) &&
-                (((long)sides[1] + sides[2]) > sides[0]) &&
-                ((((long)sides[2] + sides[0]) > sides[1]));
+        return (((long) sides[0] + sides[1]) > sides[2]) &&
+                (((long) sides[1] + sides[2]) > sides[0]) &&
+                ((((long) sides[2] + sides[0]) > sides[1]));
     }
 }

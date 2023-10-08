@@ -1,6 +1,13 @@
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+/**
+ * Тестовый класс демонстрирующий работу провайдера данных, с использованием различного количества,
+ * входных параметров.
+ *
+ * В примере перечисленны все базовые типы int, double, boolean и ссылочный тип String, так же возможно
+ * передавать объекты.
+ * */
 public class DataProviderTest {
 
     @Test(description = "@DataProvider two parameters test", dataProvider = "dataProviderTwo")
