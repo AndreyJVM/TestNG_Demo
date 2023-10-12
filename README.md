@@ -173,21 +173,61 @@ TestNG запустит 3 теста с разными данными.
 | `@AfterMethod` | запустится после каждого теста в данном классе                                                                 |
 
 Разбирать все аннотации, не считаю целесообразным, принцип думаю понятен.
-Для примера создадим ещё два тестовых класса `FirstBeforeAfterTest` и `SecondBeforeAfterTest`.
-В них реализуем простую логику, вывод информативного сообщения. С именем класса и вызываемого метода.
+Для примера создадим ещё два тестовых класса `before.after.test.FirstTest` и `before.after.test.SecondTest`.
+В них реализуем простую логику (по три тестовых метода в каждом), вывод информативного сообщения. С именем класса и вызываемого метода.
 
 ```java
-public class FirstBeforeAfterTest {
+public class FirstTest extends BaseTest{
 
     @Test
-    public void firstExampleMethodTest(){
-        System.out.println("Class name - " + getClass().getSimpleName() + " --- Method firstExampleMethodTest ");
+    public void firstExampleMethodTest() {
+        System.out.println("\t|\t|\t|\tClass name - " + getClass().getSimpleName() + " - firstExampleMethodTest ");
     }
 
     @Test
-    public void secondExampleMethodTest(){
-        System.out.println("Class name - " + getClass().getSimpleName() + " --- Method secondExampleMethodTest ");
+    public void secondExampleMethodTest() {
+        System.out.println("\t|\t|\t|\tClass name - " + getClass().getSimpleName() + " - secondExampleMethodTest ");
+    }
+
+    @Test
+    public void thirdExampleMethodTest(){
+        System.out.println("\t|\t|\t|\tClass name - " + getClass().getSimpleName() + " - thirdExampleMethodTest ");
     }
 }
 ```
+Запускаем наш конфигурационный xml файл получаем:
+<details>
+    <summary>Результат работы testng.xml</summary>
+Class - SecondTest -> @BeforeSuite 
 
+	Class - FirstTest -> @BeforeTest 
+	|	Class - FirstTest -> @BeforeClass 
+	|	|	Class - FirstTest -> @BeforeMethod 
+	|	|	|	Class name - FirstTest - firstExampleMethodTest 
+	|	|	Class - FirstTest -> @AfterMethod 
+	|	|	Class - FirstTest -> @BeforeMethod 
+	|	|	|	Class name - FirstTest - secondExampleMethodTest 
+	|	|	Class - FirstTest -> @AfterMethod 
+	|	|	Class - FirstTest -> @BeforeMethod 
+	|	|	|	Class name - FirstTest - thirdExampleMethodTest 
+	|	|	Class - FirstTest -> @AfterMethod 
+	|	Class - FirstTest -> @AfterClass 
+	Class - FirstTest -> @AfterTest 
+
+	Class - SecondTest -> @BeforeTest 
+	|	Class - SecondTest -> @BeforeClass 
+	|	|	Class - SecondTest -> @BeforeMethod 
+	|	|	|	Class name - SecondTest - firstExampleMethodTest 
+	|	|	Class - SecondTest -> @AfterMethod 
+	|	|	Class - SecondTest -> @BeforeMethod 
+	|	|	|	Class name - SecondTest - secondExampleMethodTest 
+	|	|	Class - SecondTest -> @AfterMethod 
+	|	|	Class - SecondTest -> @BeforeMethod 
+	|	|	|	Class name - SecondTest - thirdExampleMethodTest 
+	|	|	Class - SecondTest -> @AfterMethod 
+	|	Class - SecondTest -> @AfterClass 
+	Class - SecondTest -> @AfterTest 
+
+Class - SecondTest -> @AfterSuite
+
+</details>

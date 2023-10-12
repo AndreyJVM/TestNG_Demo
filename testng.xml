@@ -3,20 +3,20 @@
 <suite name="First test suite">
 
     <parameter name="Name" value="Andrey"/>
-    
+
     <test name="First BeforeXXX and AfterXXX tests">
         <classes>
-            <class name="FirstBeforeAfterTest"/>
+            <class name="before.after.test.FirstTest"/>
         </classes>
     </test>
 
     <test name="Second BeforeXXX and AfterXXX tests">
         <classes>
-            <class name="SecondBeforeAfterTest"/>
+            <class name="before.after.test.SecondTest"/>
         </classes>
     </test>
 
-   <!-- <test name="Triangle tests">
+<!--    <test name="Triangle tests">
         <classes>
             <class name="TriangleTest"/>
             &lt;!&ndash;В следствии добавления нового класса, будут запущены все тесты, в данном случае 6&ndash;&gt;
