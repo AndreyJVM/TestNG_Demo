@@ -198,6 +198,8 @@ public class FirstTest extends BaseTest{
 Запускаем наш конфигурационный xml файл получаем:
 <details>
     <summary>Результат работы testng.xml</summary>
+
+```text
 Class - SecondTest -> @BeforeSuite 
 
 	Class - FirstTest -> @BeforeTest 
@@ -226,8 +228,8 @@ Class - SecondTest -> @BeforeSuite
 	|	|	|	Class name - SecondTest - thirdExampleMethodTest 
 	|	|	Class - SecondTest -> @AfterMethod 
 	|	Class - SecondTest -> @AfterClass 
-	Class - SecondTest -> @AfterTest 
+	Class - SecondTest -> @AfterTest
 
 Class - SecondTest -> @AfterSuite
-
+```
 </details>
