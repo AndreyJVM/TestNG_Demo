@@ -1,4 +1,4 @@
-package before.after.test;
+package before.after.xxx;
 
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;

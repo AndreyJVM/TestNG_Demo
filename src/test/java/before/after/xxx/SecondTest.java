@@ -1,22 +1,21 @@
-package before.after.test;
+package before.after.xxx;
 
-import org.testng.annotations.*;
-
+import org.testng.annotations.Test;
 /**
- * Первый тест демонстрирующий работы аннотаций @BeforeXXX и @AfterXXX
+ * Второй тест демонстрирующий работы аннотаций @BeforeXXX и @AfterXXX
  *
  * Методы не имеют сложной логики и нужны для информативности вывода
- *
- */
-public class FirstTest extends BaseTest{
+ * */
+
+public class SecondTest extends BaseTest{
 
     @Test
-    public void firstExampleMethodTest() {
+    public void firstExampleMethodTest(){
         System.out.println("\t|\t|\t|\tClass name - " + getClass().getSimpleName() + " - firstExampleMethodTest ");
     }
 
     @Test
-    public void secondExampleMethodTest() {
+    public void secondExampleMethodTest(){
         System.out.println("\t|\t|\t|\tClass name - " + getClass().getSimpleName() + " - secondExampleMethodTest ");
     }
 

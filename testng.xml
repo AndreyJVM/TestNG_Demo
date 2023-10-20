@@ -6,13 +6,13 @@
 
     <test name="First BeforeXXX and AfterXXX tests">
         <classes>
-            <class name="before.after.test.FirstTest"/>
+            <class name="before.after.xxx.FirstTest"/>
         </classes>
     </test>
 
     <test name="Second BeforeXXX and AfterXXX tests">
         <classes>
-            <class name="before.after.test.SecondTest"/>
+            <class name="before.after.xxx.SecondTest"/>
         </classes>
     </test>
 
