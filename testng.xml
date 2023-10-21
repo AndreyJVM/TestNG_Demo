@@ -16,7 +16,7 @@
         </classes>
     </test>
 
-<!--    <test name="Triangle tests">
+    <test name="Triangle tests">
         <classes>
             <class name="TriangleTest"/>
             &lt;!&ndash;В следствии добавления нового класса, будут запущены все тесты, в данном случае 6&ndash;&gt;
@@ -36,5 +36,5 @@
         <classes>
             <class name="AuxiliaryParametersTest"/>
         </classes>
-    </test>-->
+    </test>
 </suite>
