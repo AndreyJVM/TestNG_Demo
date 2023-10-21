@@ -306,9 +306,15 @@ public void trueTest(){
 ```
 
 ### 3. assertTrue() и assertFalse()
-Для проверки булевых значений. В TestNG есть два метода первый `assertTrue()` когда мы ожидаем `true` и второй
+В TestNG есть два метода для проверки булевых значений, первый `assertTrue()` когда мы ожидаем `true` и второй
 `assertFalse()` если мы ждём `fasle`.
 
+Аргументами методу передаются, логическое условие `condition` и сообщение `message` которое мы увидим в случае ошибки:
+```java
+asserTrue(condition, message);
+asserFalse(condition, message);
+```
+Ниже приведен пример простой реализации данных тестовых методов
 ```java
 @Test
 public class TestBoolean{
@@ -324,3 +330,4 @@ public class TestBoolean{
     }
 }
 ```
+
