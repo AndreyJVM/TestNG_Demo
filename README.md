@@ -3,15 +3,13 @@
 ![Linkedin-url](https://img.shields.io/badge/Java-_11-red)
 #### Библиотеки: ####
 ![Linkedin-url](https://img.shields.io/badge/Maven-version_4.0.0-blue)
-
 ![Linkedin-url](https://img.shields.io/badge/TestNG-version_7.8.0-blue)
 
-###### Над проектом работал [Andrey Vorobev](https://github.com/AndreyJVM)
 ###### Используется материал
-1. [Константин Барзаковский](https://qaway.ru/)
-- ![Linkedin-url](https://img.shields.io/badge/Telegramm-@qa_w_a_y-blue)
-2. Документация TestNG
-3. https://stepik.org
+1. [Константин Барзаковский](https://qaway.ru/);
+2. [Документация TestNG](https://testng.org/doc/documentation-main.html);
+3. [Stepik](https://stepik.org).
+
 ---
 **TestNG** - это тестовый фреймворк, предназначенный как для unit, так и для интеграционных и end-to-end тестов. 
 Основная работа строится через использование различных аннотаций. Имеется возможность гибкой конфигурации и многопоточного запуска автотестов.
@@ -309,7 +307,7 @@ public void trueTest(){
 В TestNG есть два метода для проверки булевых значений, первый `assertTrue()` когда мы ожидаем `true` и второй
 `assertFalse()` если мы ждём `fasle`.
 
-Аргументами методу передаются, логическое условие `condition` и сообщение `message` которое мы увидим в случае ошибки:
+Аргументами методу передаются: логическое условие `condition` и сообщение `message` которое мы увидим в случае ошибки:
 ```java
 asserTrue(condition, message);
 asserFalse(condition, message);
@@ -331,3 +329,64 @@ public class TestBoolean{
 }
 ```
 
+### 4. assertNull() и assertNotNull()
+
+Аргументами методу передаются: **объект** `object`, который мы будем проверять на `Null` и **сообщение** `message`
+которое мы увидим в случае ошибки:
+```java
+asserNull(object, message);
+asserNotNull(object, message);
+```
+
+### 5. assertSame() и assertNotSame()
+
+Эти методы очень схожи с `assertEquals`, только в данном случае мы сравниваем не сами значения объектов, а их ссылки.
+Аргументами методу передаются: **фактическое значение** `actual`, **ожидаемое значение** `expected` и **сообщение** `message` 
+которое мы увидим в случае ошибки:
+```java
+asserSame(actual, expected, message);
+asserNotSame(actual, expected, message);
+```
+Ниже реализуем тестовый метод, в котором создадим объект типа `String` и присвоим ссылку на объект переменной `expected`,
+и проверим, действительно ли ссылки равны?
+
+```java
+import org.testng.annotations.Test;
+
+import static org.testng.AssertJUnit.assertSame;
+
+public class AssertSameTestDemo{
+
+    @Test(description = "assertSame() demo")
+    public void assertSameTestDemo(){
+        final String actual = new String("Hello world!");
+        final String expected = actual;
+
+        assertSame(actual, expected); // вернёт true
+    }
+}
+```
+
+![8img.png](src%2Fmain%2Fresources%2F8img.png)
+
+Аналогично проверим метод `assrtNotSame()`, только теперь создадим два разных объекта.
+
+```java
+import org.testng.annotations.Test;
+
+import static org.testng.AssertJUnit.assertNotSame;
+
+public class AssertNotSameTestDemo {
+    @Test(description = "assertNotSame() demo")
+    public void assertNotSameTestDemo() {
+        final String actual = new String("Hello world!");
+        final String expected = new String("Hello world!");
+
+        assertNotSame(actual, expected); // вернёт true
+    }
+}
+```
+![9img.png](src%2Fmain%2Fresources%2F9img.png)
+
+---
+### Над проектом работал [Andrey Vorobev](https://github.com/AndreyJVM)
