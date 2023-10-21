@@ -266,3 +266,61 @@ Class - SecondTest -> @AfterSuite
 
 
 ---
+## Класс Assert 
+Содержит методы, которые помогут нам, что-нибудь сравнить или проверить 
+### 1. assertEquals(actual, expected, message)
+
+`assertEquals(actual, expected);` метод сравнивает два значения, возвращает `true` если они равны:
+```java
+@Test
+public void trueTest(){
+    byte a = 10;
+    assertEquals(a, 10); // вернёт true 
+}
+```
+и `false`, если значения не равны:
+```java
+@Test
+public void falseTest(){
+    byte a = 7;
+    assertEquals(a, 10); // вернёт false 
+}
+```
+Также мы можем передать ешё один параметр, это `message` `assertEquals(actual, expected, message);`, он необходим если мы хотим получить информативное сообщение
+об ошибке `false`
+
+```java
+assertEquals(10, 107, "10 != 107");
+```
+
+### 2. assertNotEquals(actual, expected, message)
+
+Здесь всё аналогично `assertEquals()` только теперь мы проверяем, тто наше условие ложно и ожидаем 
+`true`, а если они вдруг равны то метод вернёт `fslse`.
+```java
+@Test
+public void trueTest(){
+    byte a = 7;
+    assertNotEquals(a, 10); // вернёт true
+}
+```
+
+### 3. assertTrue() и assertFalse()
+Для проверки булевых значений. В TestNG есть два метода первый `assertTrue()` когда мы ожидаем `true` и второй
+`assertFalse()` если мы ждём `fasle`.
+
+```java
+@Test
+public class TestBoolean{
+    
+    public void testAssertTrue(){
+        boolean condition = (10 == 10);
+        assertTrue(condition); //вернёт true
+    }
+    
+    public void testAssertFalse(){
+        boolean condition = (10 == 1);
+        assertFalse(condition); //вернёт true
+    }
+}
+```

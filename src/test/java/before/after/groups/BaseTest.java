@@ -19,7 +19,7 @@ public class BaseTest {
         System.out.println("Class - " + getClass().getSimpleName() + " -> @AfterGroups");
     }
 
-    @AfterGroups(groups = {"first-groups"})
+    @AfterGroups(groups = {"second-groups"})
     public void afterSecondGroups(){
         System.out.println("Class - " + getClass().getSimpleName() + " -> @AfterGroups");
     }
